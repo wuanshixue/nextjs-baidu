@@ -32,7 +32,7 @@ export default function SearchBar() {
             <button
                 type="button"
                 className="px-1 text-gray-500 hover:bg-blue-500 translate-y-9"
-                title="上传文件"
+                title="快速理解总结文件，支持PDF、Word、Excel、PPT、txt、Java、Python等，最大50MB"
             >
                 🖇️
             </button>
@@ -41,7 +41,7 @@ export default function SearchBar() {
             <button
                 type="button"
                 className="px-1 text-gray-500 hover:bg-blue-500 translate-y-9 "
-                title="以图搜图"
+                title="一键解图图片内容，支持jpg、png、gif等,最大10MB"
             >
                 🖼️
             </button>
@@ -49,7 +49,7 @@ export default function SearchBar() {
             {/* 搜索按钮 */}
             <button
                 type="submit"
-                className="px-5 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition font-medium translate-y-8"
+                className="px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:bg-blue-600 transition font-medium translate-y-7"
             >
                 百度一下
             </button>
