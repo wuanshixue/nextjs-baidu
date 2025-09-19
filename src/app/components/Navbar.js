@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Weather from "./Weather";
 
 export default function Navbar() {
     // 顶部导航栏的主要菜单项
@@ -37,7 +38,10 @@ export default function Navbar() {
                     >
                         {item.name}
                     </Link>
+
+
                 ))}
+
 
                 {/* 更多 - 下拉菜单 */}
                 <div className="relative group">
@@ -68,6 +72,7 @@ export default function Navbar() {
                         </ul>
                     </div>
                 </div>
+                <Weather city="Jiaxing"/>
             </nav>
 
             {/* 底部分割线 */}
