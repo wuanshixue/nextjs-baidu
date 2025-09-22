@@ -1,5 +1,6 @@
 import Image from "next/image";
-import SearchBar from "./components/SearchBar"; // ⬅️ 确保路径对
+import SearchBar from "./components/SearchBar"; //
+import HotSearch from "./components/HotSearch";
 
 export default function Page() {
     return (
@@ -9,6 +10,8 @@ export default function Page() {
 
             {/* 搜索栏 */}
             <SearchBar />
+            {/* 百度热搜 */}
+            <HotSearch />
         </main>
     );
 }

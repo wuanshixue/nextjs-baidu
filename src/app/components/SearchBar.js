@@ -15,17 +15,17 @@ export default function SearchBar() {
     return (
         <form
             onSubmit={handleSubmit}
-            className="flex items-center w-full max-w-2xl rounded-2xl p-[3px] bg-gradient-to-r from-blue-500 to-purple-500 shadow-sm"
+            className="-translate-y-24 flex items-center w-full max-w-2xl rounded-2xl p-[3px] bg-gradient-to-r from-blue-500 to-purple-500 shadow-sm"
         >
             {/* 内层白底容器，保证输入框区域是白色 */}
-            <div className="flex flex-1 items-center rounded-2xl bg-white">
+            <div className="flex flex-1 items-center rounded-2xl bg-white ">
             {/* 输入框 */}
             <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="男子白天开豪车晚上变大盗"
-                className="flex-1 px-4 py-10 rounded-l-2xl text-base outline-none -translate-y-9"
+                placeholder="看总书记关心的清洁能源这样发电"
+                className="flex-1 px-4 py-10 rounded-l-2xl text-base outline-none -translate-y-8"
             />
 
             {/* 附件按钮 */}
@@ -49,7 +49,7 @@ export default function SearchBar() {
             {/* 搜索按钮 */}
             <button
                 type="submit"
-                className="px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full hover:bg-blue-600 transition font-medium translate-y-7"
+                className="px-5 py-2 bg-gradient-to-l from-blue-500 to-purple-500 text-white rounded-full hover:bg-blue-600 transition font-medium translate-y-7"
             >
                 百度一下
             </button>
