@@ -31,7 +31,7 @@ export default function HotSearch() {
     };
 
     return (
-        <div className="mt-8 w-full max-w-2xl -translate-y-20">
+        <div className="mt-8 w-full max-w-2xl -translate-y-50">
             {/* 标题 + 换一换 */}
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-bold">百度热搜</h2>

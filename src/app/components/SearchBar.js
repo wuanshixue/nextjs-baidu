@@ -15,7 +15,7 @@ export default function SearchBar() {
     return (
         <form
             onSubmit={handleSubmit}
-            className="-translate-y-24 flex items-center w-full max-w-2xl rounded-2xl p-[3px] bg-gradient-to-r from-blue-500 to-purple-500 shadow-sm"
+            className="-translate-y-50 flex items-center w-full max-w-2xl rounded-2xl p-[3px] bg-gradient-to-r from-blue-500 to-purple-500 shadow-sm"
         >
             {/* 内层白底容器，保证输入框区域是白色 */}
             <div className="flex flex-1 items-center rounded-2xl bg-white ">

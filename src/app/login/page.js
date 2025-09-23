@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
     const [form, setForm] = useState({ username: "", password: "" });
     const [message, setMessage] = useState("");
+    const router = useRouter();
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -20,6 +22,12 @@ export default function LoginPage() {
 
         const data = await res.json();
         setMessage(data.message || "未知错误");
+        if (res.ok) {
+            // 登录成功，跳转首页
+            router.push("/");
+        } else {
+            alert(data.error || "登录失败");
+        }
     };
 
     return (

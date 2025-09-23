@@ -1,5 +1,4 @@
 import "./globals.css";
-import Navbar from "./components/Navbar";
 
 export const metadata = {
   title: "百度一下，你就知道",
@@ -13,8 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
       <html lang="zh-CN">
+      <head>
+          <link
+              href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+              rel="stylesheet"
+          />
+      </head>
       <body className="bg-white text-black">
-      <Navbar />
       {children}
 
       {/* 底部 */}
