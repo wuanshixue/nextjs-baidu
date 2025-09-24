@@ -1,28 +1,18 @@
-// app/api/weather/route.js
 import { NextResponse } from "next/server";
 
 export async function GET(req) {
     const { searchParams } = new URL(req.url);
-    const city = searchParams.get("city") || "Beijing";
+    const district_id = searchParams.get("district_id")
+
+    const ak = process.env.BAIDU_WEATHER_AK;
+    const apiUrl = `https://api.map.baidu.com/weather/v1/?district_id=${district_id}&data_type=all&ak=${ak}`;
 
     try {
-        const url = `https://wttr.in/${encodeURIComponent(city)}?format=j1`;
-        const resp = await fetch(url, { cache: "no-store" });
-        if (!resp.ok) {
-            return NextResponse.json(
-                { error: "wttr.in API 请求失败" },
-                { status: resp.status }
-            );
-        }
+        const res = await fetch(apiUrl);
+        const data = await res.json();
 
-        const data = await resp.json();
-        return NextResponse.json({
-            city: data.nearest_area[0].areaName[0].value,
-            temp: Number(data.current_condition[0].temp_C), // ✅ 转成数字
-            weather: data.current_condition[0].weatherDesc[0].value,
-        });
+        return NextResponse.json(data);
     } catch (error) {
-        console.error("API 错误:", error);
-        return NextResponse.json({ error: "服务器错误" }, { status: 500 });
+        return NextResponse.json({ error: "获取天气失败" }, { status: 500 });
     }
 }

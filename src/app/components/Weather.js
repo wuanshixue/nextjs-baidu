@@ -1,54 +1,27 @@
 "use client";
 import { useEffect, useState } from "react";
 
-// 天气关键词与 emoji 图标映射
-const weatherIcons = {
-    "晴": "☀️",
-    "多云": "⛅",
-    "阴": "☁️",
-    "小雨": "🌦️",
-    "中雨": "🌧️",
-    "大雨": "⛈️",
-    "雷阵雨": "🌩️",
-    "小雪": "🌨️",
-    "中雪": "❄️",
-    "大雪": "☃️",
-    "雾": "🌫️",
-    "霾": "🌫️",
-};
-
-export default function Weather({ city = "Beijing" }) {
+export default function Weather({ district_id }) {
     const [weather, setWeather] = useState(null);
 
     useEffect(() => {
+        if (!district_id) return; // 没有传位置就不请求
         async function fetchWeather() {
-            try {
-                const res = await fetch(`/api/weather?city=${city}`);
-                const data = await res.json();
-                setWeather(data);
-            } catch (err) {
-                console.error("获取天气失败:", err);
-            }
+            const res = await fetch(`/api/weather?district_id=${district_id}`);
+            const data = await res.json();
+            setWeather(data);
         }
         fetchWeather();
-    }, [city]);
+    }, [district_id]); // ✅ 依赖是固定的
 
-    if (!weather) return <span>加载天气中...</span>;
-    if (weather.error) return <span>天气获取失败</span>;
+    if (!weather) return <p>请选择位置</p>;
 
-    // 根据天气描述选择 emoji
-    const icon =
-        weatherIcons[
-            Object.keys(weatherIcons).find((key) =>
-                weather.weather.includes(key)
-            )
-            ]
+    const now = weather?.result?.now;
+    const location = weather?.result?.location;
 
     return (
-        <div className="flex items-center space-x-2">
-      <span>
-        {icon} {weather.city} | {weather.weather} {Math.round(weather.temp)}°C
-      </span>
+        <div className="p-4 ">
+            <p> {location?.city}{now?.temp}°{now?.text}</p>
         </div>
     );
 }

@@ -105,7 +105,8 @@ export default function Navbar() {
 
                 {/* 右侧：天气 + 用户状态 */}
                 <div className="flex items-center space-x-6">
-                    <Weather city="Jiaxing" />
+                    {/* 嘉兴 */}
+                    <Weather district_id="330400" />
                     {user ? (
                         <div className="flex items-center space-x-4">
                             <span
