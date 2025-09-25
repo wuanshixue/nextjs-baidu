@@ -50,11 +50,11 @@ export default function Navbar() {
     ];
 
     return (
-        <header className="w-full bg-white -translate-y-31">
+        <header className="w-full bg-white -translate-y-36">
             {/* 顶部导航容器 */}
             <nav className="relative max-w-5xl mx-auto flex items-center justify-between py-3 px-4 text-sm text-gray-700">
                 {/* 左侧导航 */}
-                <div className="flex space-x-6">
+                <div className="flex space-x-6 justify-left">
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
