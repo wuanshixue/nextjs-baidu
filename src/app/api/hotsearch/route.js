@@ -14,12 +14,15 @@ export async function GET() {
 
         const data = await res.json();
 
+
+
         if(data.code !==200){
             return NextResponse.json({error: data.msg || "接口错误"},{status:500});
         }
 
         // data.result.list 是热搜数据数组
         const list = data.result?.list || [];
+
 
         return NextResponse.json({ list });
     }catch(err){
