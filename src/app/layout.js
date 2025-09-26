@@ -24,7 +24,9 @@ export default function RootLayout({ children }) {
 
       {/* 底部 */}
       <footer className="translate-y-20  absolute bottom-5 left-0 right-0 flex justify-center text-gray-500 text-sm">
-          <Link href="https://www.baidu.com" className="hover:text-gray-400">© 2025 仿百度项目 - 仅学习使用</Link>
+          <Link href="https://www.baidu.com" className="hover:text-gray-400">
+              © 2025 仿百度项目 - 仅学习使用
+          </Link>
       </footer>
       </body>
       </html>

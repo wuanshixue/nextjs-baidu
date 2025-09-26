@@ -11,7 +11,7 @@ async function connectDB() {
         database: "work1",
     });
 }
-
+// POST 请求处理函数（注册接口）
 export async function POST(req) {
     try {
         const { username, password } = await req.json();

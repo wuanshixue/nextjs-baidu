@@ -25,7 +25,7 @@ export default function SearchBar() {
                     setPlaceholder("百度热搜词加载失败");
                 }
             } catch (err) {
-                console.error("❌ 获取热搜失败:", err);
+                console.error("获取热搜失败:", err);
                 setPlaceholder("加载失败，请手动输入");
             }
         }
@@ -51,7 +51,7 @@ export default function SearchBar() {
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    placeholder={placeholder}  // ✅ 用动态 placeholder
+                    placeholder={placeholder}  // 用动态 placeholder
                     className="flex-1 px-4 py-10 rounded-l-2xl text-base outline-none -translate-y-8"
                 />
 

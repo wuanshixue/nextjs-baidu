@@ -2,6 +2,7 @@ import {NextResponse} from "next/server";
 
 export async function GET() {
     const API_KEY = process.env.TIANAPI_KEY;
+    // 接口的请求 URL
     const API_URL = `https://apis.tianapi.com/nethot/index?key=${API_KEY}`;
 
     try{
